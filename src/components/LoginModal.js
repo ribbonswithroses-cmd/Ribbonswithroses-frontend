@@ -18,7 +18,7 @@ const LoginModal = ({ onClose, onLogin }) => {
     }
     try {
       setLoading(true);
-      await axios.post("/users/request-otp", { email }, { withCredentials: true });
+      await axios.post("/users/request-otp", { email });
       toast.success("OTP sent to your email!");
       setStep("otp");
     } catch (err) {
@@ -39,8 +39,7 @@ const handleVerifyOtp = async (e) => {
     setLoading(true);
     const res = await axios.post(
       "/users/verify-otp",
-      { email, otp },
-      { withCredentials: true }
+      { email, otp }
     );
 
     toast.success("Login successful!");
