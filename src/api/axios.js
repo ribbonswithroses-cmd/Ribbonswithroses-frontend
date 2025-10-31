@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "https://ribbonswithroses-backend-production-576b.up.railway.app/api
-/api",
+  baseURL: process.env.REACT_APP_API_URL || "https://ribbonswithroses-backend-production-576b.up.railway.app/api",
   withCredentials: true,
 });
 
