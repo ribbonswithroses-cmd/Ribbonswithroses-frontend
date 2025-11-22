@@ -10,7 +10,6 @@ const occasionsList = [
   { id: "fathers-day", name: "👔 Father’s Day" },
   { id: "mothers-day", name: "🌸 Mother’s Day" },
   { id: "anniversary", name: "💍 Anniversary" },
-  { id: "express-love", name: "❤️ Express Love" },
   { id: "get-well", name: "💐 Get Well Soon" },
   { id: "valentines-day", name: "💕 Valentine’s Day" },
   { id: "congratulations", name: "🎉 Congratulations" },
