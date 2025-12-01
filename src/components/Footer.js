@@ -60,7 +60,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="text-sm text-center py-4">
-        <p>&copy; {new Date().getFullYear()} Ribbons With Roses. All rights reserved.(Absoltix Solutions)</p>
+        <p>&copy; {new Date().getFullYear()} Ribbons With Roses. All rights reserved.(Absoltix Solution)</p>
       </div>
     </footer>
   );
