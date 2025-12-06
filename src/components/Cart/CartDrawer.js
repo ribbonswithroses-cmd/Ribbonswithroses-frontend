@@ -145,7 +145,6 @@
 
 
 
-/* global fbq */
 
 import React, { useState } from "react";
 import { useCart } from "../../context/CartContext";
@@ -157,6 +156,8 @@ const CartDrawer = ({ open, onClose, user, setUser }) => {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  const fbq = window.fbq;
+
 
 const subtotal = cart.reduce(
   (sum, item) =>
