@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["react-app", "eslint:recommended"],
+  "globals": {
+    "fbq": "readonly"
+  },
+  "rules": {
+    "no-undef": "off"
+  }
+}
