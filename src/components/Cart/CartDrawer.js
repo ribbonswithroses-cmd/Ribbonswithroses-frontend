@@ -169,14 +169,37 @@ const subtotal = cart.reduce(
 
   if (!open) return null;
 
+  // const handleCheckoutClick = () => {
+  //   if (!user) {
+  //     toast.error("Please login first!");
+  //     setLoginOpen(true);
+  //   } else {
+  //     setCheckoutOpen(true);
+  //   }
+  // };
   const handleCheckoutClick = () => {
-    if (!user) {
-      toast.error("Please login first!");
-      setLoginOpen(true);
-    } else {
-      setCheckoutOpen(true);
+  if (!user) {
+    toast.error("Please login first!");
+    setLoginOpen(true);
+  } else {
+    // ✅ Fire Meta Pixel event
+    if (typeof fbq !== "undefined") {
+      fbq("track", "InitiateCheckout", {
+        value: subtotal.toFixed(2),
+        currency: "USD",
+        contents: cart.map(item => ({
+          id: item.id,
+          name: item.name,
+          quantity: item.quantity,
+          price: item.totalPrice ?? item.basePrice ?? item.price ?? 0
+        })),
+        content_type: "product"
+      });
     }
-  };
+
+    setCheckoutOpen(true);
+  }
+};
 
   return (
     <>
